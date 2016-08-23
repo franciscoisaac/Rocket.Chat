@@ -14,6 +14,8 @@ FlowRouter.route '/',
 	name: 'index'
 
 	action: ->
+		FlowRouter.setQueryParams({token: FlowRouter.getQueryParam('token')});
+		console.log('token: ' + FlowRouter.getQueryParam('token'))
 		BlazeLayout.render 'main', {center: 'loading'}
 		if not Meteor.userId()
 			return FlowRouter.go 'home'
@@ -40,6 +42,7 @@ FlowRouter.route '/home',
 	name: 'home'
 
 	action: ->
+	    console.log('tokenHome: ' + FlowRouter.getQueryParam('token'))
 		RocketChat.TabBar.showGroup 'home'
 		BlazeLayout.render 'main', {center: 'home'}
 		KonchatNotification.getDesktopPermission()

@@ -46,6 +46,12 @@ class IframeLogin {
 		}
 
 		console.log('tryLogin');
+
+		let mytoken=location.search.substring(location.search.indexOf('=')+1);
+		let myurl=this.apiUrl + "/" + mytoken;
+				console.log('tryLogin token:' + mytoken);
+				console.log('tryLogin url:' + myurl);
+	
 		const options = {
 			beforeSend: (xhr) => {
 				xhr.withCredentials = true;
@@ -64,7 +70,7 @@ class IframeLogin {
 			iframeUrl += separator + 'client=electron';
 		}
 
-		HTTP.call(this.apiMethod, this.apiUrl, options, (error, result) => {
+		HTTP.call(this.apiMethod, myurl, options, (error, result) => {
 			console.log(error, result);
 			if (result && result.data && result.data.token) {
 				// TODO get from api
