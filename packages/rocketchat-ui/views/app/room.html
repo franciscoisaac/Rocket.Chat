@@ -5,16 +5,19 @@
 				{{_ "Drop_to_upload_file"}}
 			</div>
 		</div>
-<div id='ventana-flotante'>
-   <a class='cerrar' href='javascript:void(0);' onclick='document.getElementById(&apos;ventana-flotante&apos;).className = &apos;oculto&apos;'>x</a>
+			{{#if adBanner}}
+				<div id='ventana-flotante'>
+				   <a class='cerrar' href='javascript:void(0);' onclick='document.getElementById(&apos;ventana-flotante&apos;).className = &apos;oculto&apos;'>x</a>
 
-   <div id='contenedor'>
+				   <div id='contenedor'>
 
-       <div class='contenido'>
-			<a href="{{adRef}}"><img id="imgBanner" src="{{adBanner}}"></a>
-       </div>
-   </div>
-</div>
+					   <div class='contenido'>
+							<a href="{{adRef}}"><img id="imgBanner" src="{{adBanner}}"></a>
+					   </div>
+				   </div>
+				</div>			
+			{{/if}}
+
 
 <style>
 #imgBanner{
