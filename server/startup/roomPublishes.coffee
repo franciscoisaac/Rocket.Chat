@@ -3,6 +3,9 @@ Meteor.startup ->
 		options =
 			fields:
 				name: 1
+				adRef: 1
+				adBanner: 1
+				ads: 1
 				t: 1
 				cl: 1
 				u: 1
@@ -25,6 +28,9 @@ Meteor.startup ->
 		options =
 			fields:
 				name: 1
+				adRef: 1
+				adBanner: 1
+				ads: 1				
 				t: 1
 				cl: 1
 				u: 1
@@ -42,6 +48,9 @@ Meteor.startup ->
 		options =
 			fields:
 				name: 1
+				adRef: 1
+				adBanner: 1
+				ads: 1				
 				t: 1
 				cl: 1
 				u: 1

@@ -5,23 +5,22 @@
 				{{_ "Drop_to_upload_file"}}
 			</div>
 		</div>
-		<div id='ventana-flotante'>
-
+<div id='ventana-flotante'>
    <a class='cerrar' href='javascript:void(0);' onclick='document.getElementById(&apos;ventana-flotante&apos;).className = &apos;oculto&apos;'>x</a>
 
    <div id='contenedor'>
 
        <div class='contenido'>
-			<a href="http://www.google.es"><img src="http://www.loteriasyapuestas.es/f/loterias/imagenes/mig/loteria%20de%20navidad/banner_principal.jpg"></a>
-
-
+			<a href="{{adRef}}"><img id="imgBanner" src="{{adBanner}}"></a>
        </div>
-
    </div>
-
 </div>
 
 <style>
+#imgBanner{
+width: 300px;  /* Ancho de la ventana */
+height: 75px;  /* Alto de la ventana */
+}
 #ventana-flotante {
 width: 360px;  /* Ancho de la ventana */
 height: 90px;  /* Alto de la ventana */
@@ -77,7 +76,7 @@ border-radius: 4px;
 .oculto {-webkit-transition:1s;-moz-transition:1s;-o-transition:1s;-ms-transition:1s;opacity:0;-ms-opacity:0;-moz-opacity:0;visibility:hidden;}
 </style>
 		<section class="messages-container {{adminClass}}" id="{{windowId}}" aria-label="{{_ "Channel"}}">
-			<header class="fixed-title">
+			<header class="fixed-title">	
 				{{> burger}}
 				<h2>
 					{{#if showToggleFavorite}}

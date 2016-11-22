@@ -45,11 +45,22 @@ Template.room.helpers
 
 		return RocketChat.roomTypes.getRoomName roomData?.t, roomData
 
+	adRef: ->
+		roomData = Session.get('roomData' + this._id)
+		return '' unless roomData.ads
+		return roomData.ads.ref
+
+	adBanner: ->
+		roomData = Session.get('roomData' + this._id)
+		return '' unless roomData.ads
+		return roomData.ads.banner
+		
+	
 	roomTopic: ->
 		roomData = Session.get('roomData' + this._id)
 		return '' unless roomData
 		return roomData.topic
-
+	
 	roomIcon: ->
 		roomData = Session.get('roomData' + this._id)
 		return '' unless roomData?.t
